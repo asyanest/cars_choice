@@ -1,17 +1,16 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
-import urllib.request
-from PIL import Image
 
 data=pd.read_csv('vehicles_us.csv')
 
 st.title('Choose your car!')
 st.subheader('Use this app to select the best car for your needs')
 
-image_url = 'https://www.pencilkings.com/wp-content/uploads/2013/08/PK_AE_2000x1040_Car_Caricature_Lineart-1024x532.jpg'
-urllib.request.urlretrieve(image_url, 'car_image.jpg')
-img = Image.open('car_image.jpg')
+import urllib.request
+from PIL import Image
+urllib.request.urlretrieve('https://www.pencilkings.com/wp-content/uploads/2013/08/PK_AE_2000x1040_Car_Caricature_Lineart-1024x532.jpg',"car_image.jpg")
+img = Image.open("car_image.jpg")
 st.image(img)
 
 st.caption(':blue[Choose your parametres here]')
