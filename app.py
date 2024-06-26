@@ -10,11 +10,6 @@ cleaned_data = cleaned_data.reset_index(drop=True)
 
 cleaned_data['price'] = cleaned_data['price'].astype(int)
 cleaned_data['model_year'] = cleaned_data['model_year'].astype(int)
-cleaned_data['cylinders'] = cleaned_data['cylinders'].astype(int)
-cleaned_data['odometer'] = cleaned_data['odometer'].astype(float)
-cleaned_data['is_4wd'] = cleaned_data['is_4wd'].astype(bool)
-cleaned_data['date_posted'] = pd.to_datetime(cleaned_data['date_posted'])
-cleaned_data['days_listed'] = cleaned_data['days_listed'].astype(int)
 
 st.title('Choose your car!')
 st.subheader('Use this app to select the best car for your needs')
