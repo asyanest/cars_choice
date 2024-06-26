@@ -11,7 +11,7 @@ from PIL import Image
 img = Image.open("car_image.jpg")
 st.image(img)
 
-st.caption(':blue[Choose your parameteres here]')
+st.caption('Choose your parameteres here')
 
 price_range = st.slider("What is your price range?",value=(1,375000))
 actual_range=list(range(price_range[0],price_range[1]+1))
