@@ -8,6 +8,9 @@ cleaned_data = data.dropna()
 cleaned_data = cleaned_data.drop_duplicates()
 cleaned_data = cleaned_data.reset_index(drop=True)
 
+cleaned_data = cleaned_data[pd.to_numeric(cleaned_data['price'], errors='coerce').notnull()]
+cleaned_data = cleaned_data[pd.to_numeric(cleaned_data['model_year'], errors='coerce').notnull()]
+
 cleaned_data['price'] = cleaned_data['price'].astype(int)
 cleaned_data['model_year'] = cleaned_data['model_year'].astype(int)
 
