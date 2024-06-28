@@ -5,9 +5,11 @@ from PIL import Image
 
 data = pd.read_csv('vehicles_us.csv')
 
+data['price'] = pd.to_numeric(data['price'], errors='coerce')
 data['price'] = data['price'].fillna(data['price'].mean())
+
 data['model_year'] = data['model_year'].fillna(data['model_year'].mode()[0])
-data['condition'] = data['condition'].fillna('unknown')  # or use another appropriate fill method
+data['condition'] = data['condition'].fillna('unknown')
 data['odometer'] = data['odometer'].fillna(data['odometer'].median())
 
 cleaned_data = data.drop_duplicates().reset_index(drop=True)
