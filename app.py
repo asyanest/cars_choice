@@ -14,7 +14,7 @@ data['odometer'] = data['odometer'].fillna(data['odometer'].median())
 
 cleaned_data = data.drop_duplicates().reset_index(drop=True)
 
-cleaned_data['price'] = cleaned_data['price'].astype(int)
+cleaned_data['price'] = cleaned_data['price'].astype(float)
 
 st.title('Choose your car!')
 st.subheader('Use this app to select the best car for your needs')
